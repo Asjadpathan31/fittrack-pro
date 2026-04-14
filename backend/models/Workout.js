@@ -1,3 +1,4 @@
+// Workout Model - stores exercise sessions with calorie tracking
 const mongoose = require('mongoose');
 
 const exerciseSchema = new mongoose.Schema({
