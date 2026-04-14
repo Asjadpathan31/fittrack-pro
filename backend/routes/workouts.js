@@ -1,3 +1,4 @@
+// Workout Routes - CRUD operations with streak tracking
 const router = require('express').Router();
 const auth = require('../middleware/auth');
 const Workout = require('../models/Workout');
