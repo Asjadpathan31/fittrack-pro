@@ -1,3 +1,5 @@
+// FitTrack Pro - Backend API v1.0
+// Routes: /api/auth, /api/workouts, /api/progress
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
