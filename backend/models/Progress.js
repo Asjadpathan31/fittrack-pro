@@ -1,3 +1,4 @@
+// Progress Model - stores weight tracking history
 const mongoose = require('mongoose');
 
 const progressSchema = new mongoose.Schema({
