@@ -1,3 +1,4 @@
+// Auth Routes - handles user registration and login with JWT
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
