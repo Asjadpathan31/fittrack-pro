@@ -1,93 +1,86 @@
-<div align="center">
+# FitTrack Pro
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:134e4a,50:065f46,100:022c22&height=180&section=header&text=FitTrack%20Pro&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Your%20Personal%20Fitness%20Tracker%20💪&descAlignY=60&descSize=18&descColor=34d399"/>
+A fitness-tracking web application with a React frontend and an Express API. The project is organized as two separate applications: `frontend/` and `backend/`.
 
-<br/>
+## Current architecture
 
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+| Area | Implementation |
+|---|---|
+| Frontend | React (Create React App), React Router, Recharts, Axios |
+| Backend | Node.js, Express |
+| Database | MongoDB via Mongoose |
+| Authentication | JWT-based API routes |
+| UI | React components, Framer Motion, Lucide icons |
 
-</div>
+## Repository structure
 
----
+```text
+fittrack-pro/
+├── frontend/   # React application
+│   ├── public/
+│   ├── src/
+│   └── package.json
+└── backend/    # Express API
+    ├── middleware/
+    ├── models/
+    ├── routes/
+    ├── server.js
+    └── package.json
+```
 
-## 💪 About FitTrack Pro
+## Run locally
 
-**FitTrack Pro** is a full-stack fitness tracking web application that helps users log workouts, set fitness goals, and monitor their progress over time. Stay consistent, stay healthy.
-
-> 🏋️ Track every rep. Crush every goal.
-
----
-
-## ✨ Features
-
-- 🏃 Log daily workouts and exercises
-- 📊 Visual progress charts and analytics
-- 🎯 Set and track personal fitness goals
-- 🍎 Calorie and nutrition tracking
-- 👤 User profiles with fitness history
-- 📱 Mobile-responsive interface
-
----
-
-## 🛠️ Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Frontend | React.js, JavaScript, CSS3 |
-| Backend | Node.js, Express.js |
-| Database | MongoDB |
-| Charts | Chart.js / Recharts |
-| Auth | JWT |
-
----
-
-## 🚀 Getting Started
+### 1. Start the backend
 
 ```bash
-# Clone the repository
-git clone https://github.com/Asjadpathan31/fittrack-pro.git
-cd fittrack-pro
-
-# Install dependencies
+cd backend
 npm install
+```
 
-# Setup environment variables
-cp .env.example .env
-# Add your MONGO_URI and JWT_SECRET
+Create a local `.env` file in `backend/` with:
 
-# Run the app
+```env
+MONGO_URI=mongodb://127.0.0.1:27017/fittrack
+PORT=5000
+```
+
+Then start the API:
+
+```bash
 npm run dev
 ```
 
----
+The API uses MongoDB. Make sure a local MongoDB service is running, or use a MongoDB connection string you control.
 
-## 📁 Folder Structure
+### 2. Start the frontend
 
-```
-fittrack-pro/
-├── client/          # React frontend
-│   └── src/
-│       ├── components/
-│       ├── pages/
-│       └── App.js
-├── server/          # Express backend
-│   ├── models/
-│   ├── routes/
-│   └── index.js
-└── package.json
+In a second terminal:
+
+```bash
+cd frontend
+npm install
+npm start
 ```
 
----
+Create React App serves the frontend at `http://localhost:3000` by default.
 
-## 👨‍💻 Author
+## API areas
 
-**Asjad Pathan** — Full Stack Developer
+The backend mounts route groups under:
 
-[![GitHub](https://img.shields.io/badge/GitHub-Asjadpathan31-181717?style=for-the-badge&logo=github)](https://github.com/Asjadpathan31)
+- `/api/auth`
+- `/api/workouts`
+- `/api/progress`
 
----
+The API root responds at `/` with a simple running-status message.
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:022c22,50:065f46,100:134e4a&height=100&section=footer"/>
+## Important notes
+
+- The frontend and backend have separate package manifests; there is no root-level `npm install` workflow.
+- Configure secrets and database URLs locally. Never commit `.env` files or real credentials.
+- The backend package currently has no automated test script configured.
+- Feature descriptions should be checked against the current implementation before treating this project as production-ready.
+
+## Author
+
+Asjad Pathan · [GitHub](https://github.com/Asjadpathan31) · [Portfolio](https://asjadpathan31.github.io/portfolio/)
